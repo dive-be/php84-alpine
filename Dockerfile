@@ -12,3 +12,6 @@ RUN apk add --no-cache $PHPIZE_DEPS \
 
 # Install other dependencies
 RUN apk add --no-cache patch git curl sqlite nodejs npm mariadb-client ncdu openssh-client;
+
+# Create my.cnf file
+RUN printf "[mysql]\nskip-ssl\n" > /etc/my.cnf
